@@ -357,10 +357,6 @@
   <p *ngFor="let fruit of fruits">{{ fruit }}</p>
 
 
-  <p>Here are some names of doggies:</p>
-  <p *ngFor="let dog of doggies">{{ dog }}</p>
-  <p *ngIf="doggies.length > 2">{{dogsAlertBox()}}</p>
-
   <div *ngIf="toShow" class="card-container">
     <a class="card" target="_blank" rel="noopener" href="https://angular.io/tutorial">
       <svg class="material-icons" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24"><path d="M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82zM12 3L1 9l11 6 9-4.91V17h2V9L12 3z"/></svg>
@@ -434,7 +430,16 @@
 
     <button class="card card-small" (click)="woofAlertBox()">Woof-woof!</button>
 
-    <button class="card card-small" (click)="doggies.push('Luna')">Add a dog</button>
+    <button class="card card-small" (click)="addDog()">Add dog</button>
+
+    <div>
+      <ul>
+        <li *ngFor="let dog of doggies">{{ dog.name }}</li>
+      </ul>
+
+      <p *ngIf="doggies.length <= 2">Who let the dogs out?</p>
+    </div>
+
 
 
   </div>
