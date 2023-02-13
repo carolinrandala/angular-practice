@@ -18,6 +18,7 @@ export class AppComponent implements OnInit{
 
   doggies: Dog[] = [];
   dogNames: string[] = ['Caesar', 'Scooby', 'Lucky'];
+  dogTitle = 'List of dogs';
 
   fetchDoggos(): Dog[] {
     let doggos: Dog[] = [];
