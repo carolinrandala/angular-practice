@@ -13,7 +13,6 @@ export class DogComponent implements OnInit{
   @Input() dogTitle: string = '';
   @Input() doggies: Dog[] = [];
   // Displaying values from one component to another
-
   displayedColumns: string[] = ['name', 'type', 'property'];
 
   // @ts-ignore
@@ -24,15 +23,11 @@ export class DogComponent implements OnInit{
     this.doggies.push(this.doggies[randomElementIndex]);
     this.table.renderRows();
   }
-
   removeData() {
     this.doggies.pop();
     this.table.renderRows();
   }
   ngOnInit(): void {
-
   }
-
-
 
 }
