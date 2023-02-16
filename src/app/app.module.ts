@@ -8,6 +8,24 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTableModule} from "@angular/material/table";
 import {MatButtonModule} from "@angular/material/button";
 import {DashboardModule} from "./dashboard/dashboard.module";
+import {RouterModule, Routes} from "@angular/router";
+import {CatComponent} from "./dashboard/cat/cat.component";
+
+
+const appRoutes: Routes = [ //creating a routes object to make different pages
+  {
+    path: 'dog',
+    component: DogComponent
+  },
+  {
+    path: 'create-dog',
+    component: DogFormComponent
+  },
+  {
+    path: 'cat',
+    component: CatComponent
+  }
+];
 
 @NgModule({
   declarations: [
@@ -21,7 +39,8 @@ import {DashboardModule} from "./dashboard/dashboard.module";
     BrowserAnimationsModule,
     MatTableModule,
     MatButtonModule,
-    DashboardModule
+    DashboardModule,
+    RouterModule.forRoot(appRoutes) //passing created json arrays
   ],
   providers: [],
   bootstrap: [AppComponent]

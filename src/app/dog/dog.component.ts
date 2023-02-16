@@ -8,12 +8,12 @@ import {MatTable} from "@angular/material/table";
   styleUrls: ['./dog.component.css']
 })
 export class DogComponent implements OnInit{
+  doggies: Dog[] = [];
 
-  //input var name and type = initialized var value
-  @Input() dogTitle: string = '';
-  @Input() doggies: Dog[] = [];
   // Displaying values from one component to another
   displayedColumns: string[] = ['name', 'type', 'property'];
+
+
 
   // @ts-ignore
   @ViewChild(MatTable) table: MatTable<Dog>;
@@ -28,6 +28,15 @@ export class DogComponent implements OnInit{
     this.table.renderRows();
   }
   ngOnInit(): void {
+    this.doggies = this.fetchDoggos();
+  }
+  fetchDoggos(): Dog[] {
+    let doggos: Dog[] = [];
+
+    doggos.push(new Dog('Jack', 'Dober', 'Runs faster'));
+    doggos.push(new Dog('Shadow', 'German Shepperd', 'Eats well'));
+
+    return doggos;
   }
 
 }
